@@ -90,6 +90,7 @@ main{
     align-items: center;
     justify-content: center;
     display: flex;
+    
 }
 
 .alertReglas{
@@ -147,14 +148,13 @@ main{
 .pantallaAgregar{
     max-width: 768px;
     width: 90%;
+    margin: 0 auto;
     display: none;
-}
-
-.inputForm{
-    margin: 0 0 150px 0;
+    
 }
 
 input{
+    margin: 0 0 150px 0;
     width: 100%;
     background: none;
     border: none;
@@ -163,7 +163,6 @@ input{
     font-size: 32px;
     font-weight: 400;
     color: #0A3871;
-    padding: 0;
     text-transform: uppercase;
 }
 
@@ -173,23 +172,8 @@ input::placeholder{
     text-transform: lowercase;
 }
 
-.texto-condicion{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    margin: 0 0 15px 0;
-    width: max-content;
-}
-
-.texto-condicion p{
-    font-size: 12px;
-    color: #495057;
-    opacity: 0.8;
-}
-
 .contenedorBtones{
-    width: 100%;
+    width: 520px;
     display: flex;
     justify-content:space-between;
 }

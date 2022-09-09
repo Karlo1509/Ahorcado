@@ -43,26 +43,18 @@
             </div>
         </section>
 
-        <section class="pantallaAgregar" id="pantallaAgregar">
-            <form class="inputForm">
-                <input type="text" name="" id="newPalabra" placeholder="Ingrese una palabra" maxlength="8" minlength="3" autocomplete="off">
-            </form>
-
-            <span class="texto-condicion">
-                <img src="imagenes/Group.svg" alt="">
-                <p>Máx. de 8 letras</p>
-            </span>
+        <form class="pantallaAgregar" id="pantallaAgregar">
+            <input type="text" name="" id="newPalabra" class="inputForm" placeholder="Ingrese una palabra" maxlength="8" minlength="3">
 
             <div class="contenedorBtones">
                 <button class="btones" type="button" onclick="agregarPalabra()">Guardar y jugar</button>
                 <button class="btones btonSecundario" type="button" onclick="mostrarSection('MenuPrincipal')">Cancelar</button>
             </div>
-        </section>
+        </form>
 
         <section class="pantallaJuego" id="pantallaJuego">
             <div class="areaDibujo">
                 <canvas width="300" height="400" class="canvasAhorcado">
-
                 </canvas>
             </div>
 
