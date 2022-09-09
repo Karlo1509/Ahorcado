@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagenes/icono.png">
+    <script type="text/javascript" src="controlador.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ahorcado | Desafío 2</title>
+</head>
+<body>
+    <header>
+        <div class="identidad">
+             <h1><a href="https://www.aluracursos.com/"><img src="imagenes/logo.svg"></a></h1>
+             <h1>Karlo Castillo Zapata</h1>
+        </div>
+         <nav>
+             <ul>
+                 <li><a href="https://www.aluracursos.com/">Visitar Alura cursos</a></li>
+                 <li><a href=https://github.com/Karlo1509/Ahorcado>Ver codigo</a></li>
+             </ul>
+         </nav>    
+     </header>  
+    <main>
+        <section class="pantallaPrincipal" id="pantallaPrincipal">
+            <div class="alertReglas">
+                <h1><strong>Reglas del juego</strong></h1>
+                <ul>
+                    <li>- Debes adivinar la palabra antes de que el ahorcado se complete (8 intentos)</li>
+                    <li>- Las letras acertadas se pintaran de verde y se completara la casilla correspondiente.</li>
+                    <li>- Las letras incorrectas se pintaran de rojo y te quedara 1 intento menos.</li>
+                    <p>Muchas suerte :) !!</p>
+                </ul>
+            </div>
+            <div class="botonesPrincipales">
+                <button class="btones" type="button" onclick="mostrarSection('Juego')">Iniciar juego</button>
+                <button class="btones btonSecundario" type="button" onclick="mostrarSection('Agregar')">Agregar nueva palabra</button>
+            </div>
+        </section>
+
+        <section class="pantallaAgregar" id="pantallaAgregar">
+            <form class="inputForm">
+                <input type="text" name="" id="newPalabra" placeholder="Ingrese una palabra" maxlength="8" minlength="3" autocomplete="off">
+            </form>
+
+            <span class="texto-condicion">
+                <img src="imagenes/Group.svg" alt="">
+                <p>Máx. de 8 letras</p>
+            </span>
+
+            <div class="contenedorBtones">
+                <button class="btones" type="button" onclick="agregarPalabra()">Guardar y jugar</button>
+                <button class="btones btonSecundario" type="button" onclick="mostrarSection('MenuPrincipal')">Cancelar</button>
+            </div>
+        </section>
+
+        <section class="pantallaJuego" id="pantallaJuego">
+            <div class="areaDibujo">
+                <canvas width="300" height="400" class="canvasAhorcado">
+
+                </canvas>
+            </div>
+
+            <div class="controlJuego">
+                <div id="palabraSecreta">
+
+                </div>
+
+                <div class="teclado">
+                        <button class="btonTeclado" type="button" id="teclaQ" onclick="teclaIn('Q')">Q</button>
+                        <button class="btonTeclado" type="button" id="teclaW" onclick="teclaIn('W')">W</button>
+                        <button class="btonTeclado" type="button" id="teclaE" onclick="teclaIn('E')">E</button>
+                        <button class="btonTeclado" type="button" id="teclaR" onclick="teclaIn('R')">R</button>
+                        <button class="btonTeclado" type="button" id="teclaT" onclick="teclaIn('T')">T</button>
+                        <button class="btonTeclado" type="button" id="teclaY" onclick="teclaIn('Y')">Y</button>
+                        <button class="btonTeclado" type="button" id="teclaU" onclick="teclaIn('U')">U</button>
+                        <button class="btonTeclado" type="button" id="teclaI" onclick="teclaIn('I')">I</button>
+                        <button class="btonTeclado" type="button" id="teclaO" onclick="teclaIn('O')">O</button>
+                        <button class="btonTeclado" type="button" id="teclaP" onclick="teclaIn('P')">P</button>
+                        <button class="btonTeclado" type="button" id="teclaA" onclick="teclaIn('A')">A</button>
+                        <button class="btonTeclado" type="button" id="teclaS" onclick="teclaIn('S')">S</button>
+                        <button class="btonTeclado" type="button" id="teclaD" onclick="teclaIn('D')">D</button>
+                        <button class="btonTeclado" type="button" id="teclaF" onclick="teclaIn('F')">F</button>
+                        <button class="btonTeclado" type="button" id="teclaG" onclick="teclaIn('G')">G</button>
+                        <button class="btonTeclado" type="button" id="teclaH" onclick="teclaIn('H')">H</button>
+                        <button class="btonTeclado" type="button" id="teclaJ" onclick="teclaIn('J')">J</button>
+                        <button class="btonTeclado" type="button" id="teclaK" onclick="teclaIn('K')">K</button>
+                        <button class="btonTeclado" type="button" id="teclaL" onclick="teclaIn('L')">L</button>
+                        <button class="btonTeclado" type="button" id="teclaZ" onclick="teclaIn('Z')">Z</button>
+                        <button class="btonTeclado" type="button" id="teclaX" onclick="teclaIn('X')">X</button>
+                        <button class="btonTeclado" type="button" id="teclaC" onclick="teclaIn('C')">C</button>
+                        <button class="btonTeclado" type="button" id="teclaV" onclick="teclaIn('V')">V</button>
+                        <button class="btonTeclado" type="button" id="teclaB" onclick="teclaIn('B')">B</button>
+                        <button class="btonTeclado" type="button" id="teclaN" onclick="teclaIn('N')">N</button>
+                        <button class="btonTeclado" type="button" id="teclaM" onclick="teclaIn('M')">M</button>
+                </div>
+
+                <div class="contenedorBtones">
+                    <button class="btones" type="button" onclick="palabraRandom()">Nuevo juego</button>
+                    <button class="btones btonSecundario" type="button" onclick="mostrarSection('MenuPrincipal')">Desistir</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <div class="modal" id="modalAlertas">
+       <div class="alertVentana" id="alertError">
+        
+            <lord-icon
+                src="https://cdn.lordicon.com/qgkpggdf.json"
+                trigger="loop"
+                delay="2000"
+                style="width:250px;height:250px">
+            </lord-icon>
+            <p><strong>Error!</strong></p>
+            <p>La palabra ingresada no es valida</p>
+            <button type="button" onclick="cerrarVentana('alertError')">Aceptar</button>
+        </div>
+       <div class="alertVentana" id="alertValida">
+       
+            <lord-icon
+                src="https://cdn.lordicon.com/hrqqslfe.json"
+                trigger="loop"
+                delay="2000"
+                colors="primary:#109121,secondary:#ebe6ef"
+                style="width:250px;height:250px">
+            </lord-icon>
+            <p><strong>Guardada!</strong></p>
+            <p>La palabra fue guardada con éxito!</p>
+            <button type="button" onclick="guardarJugar('alertValida')">Aceptar</button>
+        </div>
+       <div class="alertVentana" id="alertPerdiste">
+        
+            <lord-icon
+                src="https://cdn.lordicon.com/wwneckwc.json"
+                trigger="loop"
+                delay="2000"
+                style="width:250px;height:250px">
+            </lord-icon>
+            <p><strong>Perdiste!</strong></p>
+            <p id="palabraCorrecta"></p>
+
+            <button type="button" onclick="guardarJugar('alertPerdiste')">Nuevo juego</button>
+            <button style="background: none;color: #0a3871;" type="button" onclick="volverMenu('alertPerdiste')">Menú Principal</button>
+        </div>
+       <div class="alertVentana" id="alertGanaste">
+        
+            <lord-icon
+                src="https://cdn.lordicon.com/tqywkdcz.json"
+                trigger="loop"
+                delay="0"
+                style="width:250px;height:250px">
+            </lord-icon>
+            <p><strong>Ganaste!</strong></p>
+            <p id="mostrarResultado"></p>
+            <button type="button" onclick="guardarJugar('alertGanaste')">Nuevo juego</button>
+            <button style="background: none;color: #0a3871;" type="button" onclick="volverMenu('alertGanaste')">Menú Principal</button>
+            
+        </div>
+    </div>
+    <footer>
+        <div class="redes">
+            <a href="https://www.instagram.com/karlocaza/" target="_blank"><img src="imagenes/instagram.svg" alt="Icono de instagram"></a>
+            <a href="https://github.com/Karlo1509" target="_blank"><img src="imagenes/github.svg" alt="Icono de github"></a>
+            <a href="https://www.linkedin.com/in/karlo-castillo-zapata-51a7b5230/" target="_blank"><img src="imagenes/linkedin.svg" alt="Icono de Linkedin"></a>
+        </div>
+        <p class="copyright"> Desarrollado por: Karlo Castillo Zapata</p>
+        <p class="copyright"> &copyCopyright 2022 - Todos los derechos reservados 2022</p>
+    </footer>
+    
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

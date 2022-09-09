@@ -1,0 +1,432 @@
+html{
+    box-sizing: border-box;
+}
+
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+body{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background: #F3F5FC;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    padding: 7.5px 0;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(250deg, rgba(10,25,51,1) 0%, rgba(10,25,51,1) 40%, rgba(15,46,93,1) 70%, rgb(126, 37, 144) 90%, rgb(209, 44, 113) 100%);
+    position: relative;
+}
+
+.identidad{
+    width: 320px;
+    margin: 0 1.5em;
+    display: flex;
+    align-items: center;
+}
+.identidad img{
+    width: 50px;
+}
+.identidad h1{
+    padding: 0 5px 0 0;
+    font-size: 26px;
+    color: #F3F5FC;
+}
+
+nav{
+    position: absolute;
+    width: 300px;
+    height:100% ;
+    display: flex;
+    align-items: center;
+    right: 0;
+}
+nav li {
+    display: inline-block;
+    height: 100%;
+    width: 48%;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+nav a {
+	z-index: 1;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #F3F5FC;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav ul li:nth-child(2){
+	border-left: 2px solid #F3F5FC;
+}
+
+nav ul li:hover{
+	transition: all .5s ease 0s;
+	border-radius: 10px;
+	width: 50%;
+    text-decoration: underline;
+	background-color: rgb(28, 79, 155);
+}
+
+main{
+    width: 100%;
+}
+
+.pantallaPrincipal{
+    width: 75%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.alertReglas{
+    width: 425px;
+    margin: 0 10px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+    padding: 30px;
+    text-align: left;
+}
+.alertReglas h1{
+    font-weight: 400;
+    font-size: 20px;
+    padding-bottom: 15px;
+
+}
+.alertReglas li{
+    padding: 8px 0;
+}
+.alertReglas p{
+    font-style: italic;
+    padding-top: 10px;
+    color: #171d94;
+}
+.botonesPrincipales{
+    margin-left: 80px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    vertical-align: middle;
+
+}
+.btones{
+    width: 100%;
+    border: 1px solid #0A3871;
+    border-radius: 6px;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    background: #0A3871;
+}
+
+.btonSecundario{
+    color: #0A3871;
+    background: none;
+}
+
+/* section AgregarPalabra*/
+.pantallaAgregar{
+    max-width: 768px;
+    width: 90%;
+    display: none;
+}
+
+.inputForm{
+    margin: 0 0 150px 0;
+}
+
+input{
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: 'Inter';
+    font-size: 32px;
+    font-weight: 400;
+    color: #0A3871;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+input::placeholder{
+    font-size: 32px;
+    color: #0A3871;
+    text-transform: lowercase;
+}
+
+.texto-condicion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 15px 0;
+    width: max-content;
+}
+
+.texto-condicion p{
+    font-size: 12px;
+    color: #495057;
+    opacity: 0.8;
+}
+
+.contenedorBtones{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+}
+
+.contenedorBtones .btones{
+    margin: 0;
+    width: 48%;
+}
+
+
+/* section juego*/
+.pantallaJuego{
+    max-width: 1000px;
+    width: 90%;
+    display: none;
+    flex-direction: row;
+}
+
+.areaDibujo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.controlJuego{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#palabraSecreta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* margin: 0 0 40px 0; */
+    gap: 15px;
+}
+
+#palabraSecreta .cuadroLetra{
+    border-bottom: 4px solid #0A3871;
+    width: 100%;
+    padding: 10px 0;
+    background: #fbfcfe;
+    max-width: 90px;
+    margin: 0;
+    
+    font-size: 32px;
+    min-height: 80px;
+
+    display: grid;
+    place-content: center;
+}
+
+.teclado{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    /* margin: 0 0 30px 0; */
+}
+
+.btonTeclado{
+    background: none;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    border-width: 2px;
+    border-radius: 8px;
+    border-color: #0A3871;
+    color: #0A3871;
+    cursor: pointer;
+}
+
+.disableBton{
+    background: #f44336;
+    border: #f44336;
+    color: #fcfcfc;
+    pointer-events:none;
+}
+
+.btonTrue{
+    background: #4CAF50;
+    border: #4CAF50;
+    color: #fcfcfc;
+    pointer-events:none;
+}
+
+
+
+footer{
+    width: 100%;
+    height: max-content;
+    padding-bottom: 10px;
+    background: linear-gradient(rgba(10,25,51,1) 0%, rgba(10,25,51,1) 40%, rgba(15,46,93,1) 70%, rgba(16,55,112,1) 90%, rgba(14,80,166,1) 100%);
+}
+
+.redes{
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.redes a img{
+    width: 50px;
+    padding-right: 1em;
+}
+
+.redes a img:hover{
+    position: relative;
+    bottom: 2px;
+    transition: all 2s ease-in;
+}
+
+.copyright{
+    color: #F3F5FC;
+    letter-spacing: .08em ;
+    font-size: 12px;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+/* Modal alertas */
+.modal{
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+#alertError,
+#alertValida,
+#alertPerdiste,
+#alertGanaste{
+    display: none;
+}
+
+.alertVentana{
+    width: 425px;
+    background: #f7f7f7;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 10px 0 30px 0;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+}
+
+.alertVentana button{
+    background: #0A3871;
+    border: 1px solid #0A3871;
+    padding: 14px 0;
+    border-radius: 6px;
+    color: #f7f7f7;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 80%;
+}
+
+.alertVentana p{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.alertVentana p strong{
+    font-size: 24px;
+    
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .pantallaJuego{
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .controlJuego{
+        width: 100%;
+        margin-bottom: 25px;
+        gap: 30px;
+    }
+    .canvasAhorcado{
+        height: 300px;
+    }
+
+
+}
+
+@media screen and (max-width: 425px) {
+    header{
+        padding: 20px 0 0 20px;
+    }
+    .modal{
+        position: fixed;
+    }
+    .alertVentana{
+        width: 90%;
+        padding: 0 5px 30px 5px;
+        position: sticky;
+        
+    }
+    #alertReglas{
+        padding: 20px 16px;
+    }
+
+    .contenedorBtones{
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .contenedorBtones .btones{
+        
+        width: 100%;
+    }
+
+    .btones{
+        
+        width: 90%;
+        
+    }
+    .canvasAhorcado{
+        height: 200px;
+    }
+
+    #palabraSecreta .cuadroLetra{
+        padding:  0;
+        min-height: 60px;
+    }
+}
