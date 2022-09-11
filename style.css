@@ -386,4 +386,30 @@ footer{
         width: 100%;
     }
     
+    .pantallaJuego{
+        width: 90%;
+        margin: 20px auto;
+        flex-direction: column;
+    }
+    
+    .areaDibujo{
+        width: 80%;
+        margin: 10px auto;
+    }
+    .areaDibujo canvas{
+        width: 180px;
+        height: 240px;
+    }
+    
+    .controlJuego{
+        width: 100%;
+    }
+    #palabraSecreta .cuadroLetra{
+        min-height: 60px;
+    }
+    
+    .teclado{
+        width: 90%;
+        margin-bottom: 30px;
+    }
 }
