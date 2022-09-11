@@ -140,7 +140,10 @@ function agregarPalabra() {
 }
 
 window.onkeyup = function(){
-  teclaIn(String.fromCharCode(event.keyCode))
+    if (sectionJuego.style.display == "flex"){
+      console.log("yes")
+      teclaIn(String.fromCharCode(event.keyCode))
+    } 
 };
 function teclaIn(letra) {
   let teclaSeleccion = document.querySelector(`#tecla${letra}`);
