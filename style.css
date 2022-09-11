@@ -174,6 +174,7 @@ input::placeholder{
 
 .contenedorBtones{
     width: 520px;
+    margin: 0 auto;
     display: flex;
     justify-content:space-between;
 }
@@ -186,21 +187,22 @@ input::placeholder{
 
 /* section juego*/
 .pantallaJuego{
-    max-width: 1000px;
     width: 90%;
+    margin: 20px auto;
     display: none;
     flex-direction: row;
 }
 
 .areaDibujo{
+    width: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    margin: 10px;
 }
 
 .controlJuego{
-    width: 50%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -211,7 +213,7 @@ input::placeholder{
     align-items: center;
     justify-content: center;
     width: 100%;
-    /* margin: 0 0 40px 0; */
+    padding: 30px;
     gap: 15px;
 }
 
@@ -219,24 +221,21 @@ input::placeholder{
     border-bottom: 4px solid #0A3871;
     width: 100%;
     padding: 10px 0;
-    background: #fbfcfe;
     max-width: 90px;
-    margin: 0;
-    
     font-size: 32px;
     min-height: 80px;
-
     display: grid;
     place-content: center;
 }
 
 .teclado{
+    width: 60%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5px;
-    /* margin: 0 0 30px 0; */
 }
 
 .btonTeclado{
@@ -264,8 +263,6 @@ input::placeholder{
     color: #fcfcfc;
     pointer-events:none;
 }
-
-
 
 footer{
     width: 100%;
