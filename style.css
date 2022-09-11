@@ -94,7 +94,7 @@ main{
 }
 
 .alertReglas{
-    width: 425px;
+    width: 40%;
     margin: 0 10px;
     background: #f7f7f7;
     border-radius: 8px;
@@ -350,64 +350,40 @@ footer{
     
 }
 
-
-
-@media screen and (max-width: 768px) {
-    .pantallaJuego{
-        flex-direction: column;
-        gap: 25px;
+@media screen and (max-width: 540px) {
+    .identidad h1:nth-child(2){
+        display: none;
+    }
+    nav{
+        width: auto;
+    }
+    nav a{
+        font-size: 14px;
     }
 
-    .controlJuego{
+    .pantallaPrincipal{
+        flex-direction: column;
         width: 100%;
-        margin-bottom: 25px;
-        gap: 30px;
-    }
-    .canvasAhorcado{
-        height: 300px;
+        margin: 10px auto;
     }
 
-
-}
-
-@media screen and (max-width: 425px) {
-    header{
-        padding: 20px 0 0 20px;
+    .alertReglas{
+        width: 90% ;
     }
-    .modal{
-        position: fixed;
-    }
-    .alertVentana{
+    .botonesPrincipales{
+        margin-left: 0;
+        gap: 15px;
+        margin-top: 25px;
         width: 90%;
-        padding: 0 5px 30px 5px;
-        position: sticky;
-        
     }
-    #alertReglas{
-        padding: 20px 16px;
-    }
-
     .contenedorBtones{
+        width: 75%;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
+    }
+    .contenedorBtones .btones{
+        margin: 0;
+        width: 100%;
     }
     
-    .contenedorBtones .btones{
-        
-        width: 100%;
-    }
-
-    .btones{
-        
-        width: 90%;
-        
-    }
-    .canvasAhorcado{
-        height: 200px;
-    }
-
-    #palabraSecreta .cuadroLetra{
-        padding:  0;
-        min-height: 60px;
-    }
 }
