@@ -44,13 +44,13 @@ function mostrarSection(section) {
 }
 
 let arrayPalabras = [
-  "PERRO",
+  "VENUS",
   "TERRAZA",
   "PAGINA",
-  "LETRAS",
-  "HOGAR",
+  "CODIGO",
+  "BANDERA",
   "PERSONA",
-  "COMER",
+  "MURCIELAGO",
   "ARBOL",
   "FUTBOL",
   "VIAJE",
@@ -139,6 +139,9 @@ function agregarPalabra() {
   }
 }
 
+window.onkeyup = function(){
+  teclaIn(String.fromCharCode(event.keyCode))
+};
 function teclaIn(letra) {
   let teclaSeleccion = document.querySelector(`#tecla${letra}`);
   if (palabraJuego.includes(letra)) {
