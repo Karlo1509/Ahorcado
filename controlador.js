@@ -145,21 +145,34 @@ window.onkeyup = function(){
       teclaIn(String.fromCharCode(event.keyCode))
     } 
 };
+
+let letrasUsadas = [];
+
 function teclaIn(letra) {
   let teclaSeleccion = document.querySelector(`#tecla${letra}`);
-  if (palabraJuego.includes(letra)) {
-    teclaSeleccion.classList.add("btonTrue");
-    for (let i = 0; i < palabraJuego.length; i++) {
-      if (palabraJuego[i] == letra) {
-        document.querySelector(`#ubicacion${i}`).innerHTML = letra;
-        arrayAciertos[i] = letra;
-      }
+  var valor = true
+  for (let i = 0; i < letrasUsadas.length ; i++) {
+    if (letrasUsadas[i] == letra) {
+      valor = false
     }
-  } else {
-    teclaSeleccion.classList.add("disableBton");
-    contadorIntentos++;
-    dibujoAhorcado(contadorIntentos);
   }
+  if (valor==true){
+    letrasUsadas.push(letra);
+    if (palabraJuego.includes(letra)) {
+      teclaSeleccion.classList.add("btonTrue");
+      for (let i = 0; i < palabraJuego.length+1; i++) {
+        if (palabraJuego[i] == letra) {
+          document.querySelector(`#ubicacion${i}`).innerHTML = letra;
+          arrayAciertos[i] = letra;
+        }
+      }
+    } else {
+      teclaSeleccion.classList.add("disableBton");
+      contadorIntentos++;
+      dibujoAhorcado(contadorIntentos);
+    }
+  }
+  
   controlJuego();
 }
 
