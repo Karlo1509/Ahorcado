@@ -45,6 +45,14 @@ function mostrarSection(section) {
 
 let arrayPalabras = [
   "VENUS",
+  "THIAGO",
+  "YAMAL",
+  "RAPHINA",
+  "OLMO",
+  "PEDRI",
+  "CHINININ",
+  "THIAGUIÑO",
+  "THIAGOVIJ",
   "TERRAZA",
   "PAGINA",
   "CODIGO",
